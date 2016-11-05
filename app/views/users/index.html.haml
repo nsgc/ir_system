@@ -1,0 +1,8 @@
+%table
+  %tr
+    %th id
+    %th email
+  - @users.each do |user|
+    %tr
+      %td #{user.id}
+      %td #{user.email}

@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails'
-gem 'pg'
 gem 'puma', '~> 3.0'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -11,12 +10,14 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 gem 'haml-rails'
 gem 'foundation-rails'
+gem 'devise'
 
 group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
   gem 'rspec-rails'
   gem 'factory_girl_rails'
+  gem 'sqlite3'
 end
 
 group :development do
@@ -35,7 +36,9 @@ group :test do
 end
 
 group :production do
+  gem 'pg'
   gem 'rails_12factor'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'rb-readline'
