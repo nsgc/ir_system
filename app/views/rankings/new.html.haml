@@ -1,0 +1,14 @@
+%h2 新規作成
+= form_for @ranking do |f|
+  = f.label :name, '大会名'
+  = f.text_field :name
+
+  = f.label :game_id, '機種'
+  = f.collection_select :game_id, Game.all, :id, :name, include_blank: '機種を選択'
+
+  = f.label :started_at, '開始日時 (YYYY/mm/dd HH:MM)'
+  = f.text_field :started_at
+
+  = f.label :ended_at, '終了日時 (YYYY/mm/dd HH:MM)'
+  = f.text_field :ended_at
+  = f.submit '作成'

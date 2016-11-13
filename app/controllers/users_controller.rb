@@ -4,5 +4,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = current_user
+    @owned_rankings = @user.rankings
   end
 end
