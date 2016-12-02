@@ -12,21 +12,13 @@
 
 ActiveRecord::Schema.define(version: 20161113075441) do
 
-  create_table "games", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "rankings", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "game_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.datetime "started_at"
     t.datetime "ended_at"
     t.string   "name"
-    t.index ["game_id"], name: "index_rankings_on_game_id"
     t.index ["user_id"], name: "index_rankings_on_user_id"
   end
 

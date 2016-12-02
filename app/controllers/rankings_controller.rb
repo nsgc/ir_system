@@ -17,6 +17,6 @@ class RankingsController < ApplicationController
   private
 
   def required_params
-    params.require(:ranking).permit(:name, :game_id, :started_at, :ended_at)
+    params.require(:ranking).permit(:name, :started_at, :ended_at)
   end
 end

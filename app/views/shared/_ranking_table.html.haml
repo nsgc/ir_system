@@ -1,13 +1,11 @@
 %table
   %tr
     %th 名前
-    %th 機種
     %th 開始日時
     %th 終了日時
     %th 参加人数
   - rankings.each do |ranking|
     %tr
       %td= ranking.name
-      %td= ranking.game.name
       %td= ranking.started_at.to_s(:datetime)
       %td= ranking.ended_at.to_s(:datetime)
