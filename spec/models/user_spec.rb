@@ -1,5 +1,16 @@
-require 'rails_helper'
+describe User do
+  context 'validation' do
+    before do
+      user.valid?
+    end
 
-RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+    let(:user) { build(:user, name: name, email: email, password: password) }
+    let(:name) { 'Sample User' }
+    let(:email) { 'user@sample.com' }
+    let(:password) { 'validpassword' }
+
+    subject { user.errors }
+
+    it { is_expected.to be_empty }
+  end
 end
