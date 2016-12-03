@@ -17,3 +17,7 @@ before_script:
 
 script:
   - bundle exec rake
+
+addons:
+  code_climate:
+    repo_token: 8c0209f104e5c951644895a661ae5351960d92638f339993823db8b7a2968ec0
