@@ -16,7 +16,6 @@ group :development, :test do
   gem 'pry'
   gem 'pry-byebug'
   gem 'rspec-rails'
-  gem 'capybara'
   gem 'factory_girl_rails'
   gem 'sqlite3'
 end
