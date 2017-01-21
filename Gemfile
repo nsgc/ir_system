@@ -13,6 +13,7 @@ gem 'foundation-rails'
 gem 'devise'
 
 group :development, :test do
+  gem 'guard-rspec', require: false
   gem 'pry'
   gem 'pry-byebug'
   gem 'rspec-rails'
