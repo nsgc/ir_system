@@ -89,6 +89,9 @@ GEM
       railties (>= 3.1.0)
       sass (>= 3.3.0, < 3.5)
       sprockets-es6 (>= 0.9.0)
+    fuubar (2.2.0)
+      rspec-core (~> 3.0)
+      ruby-progressbar (~> 1.4)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
     haml (4.0.7)
@@ -197,6 +200,7 @@ GEM
       rspec-mocks (~> 3.5.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
+    ruby-progressbar (1.8.1)
     ruby_parser (3.8.3)
       sexp_processor (~> 4.1)
     rubyzip (1.2.0)
@@ -265,6 +269,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   foundation-rails
+  fuubar
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
@@ -289,4 +294,4 @@ DEPENDENCIES
   web-console
 
 BUNDLED WITH
-   1.13.6
+   1.13.7
