@@ -14,21 +14,20 @@ feature 'User acount' do
     expect(page).to have_content('ログアウト')
   end
 
-  xfeature 'Sign in and Sign out' do
-    background do
-      create(:user)
-    end
+  scenario 'Sign in and Sign out' do
+    create(:user)
+    visit root_path
+    click_on 'ログイン'
+    expect(page).to have_content('ログイン')
 
-    scenario 'Sign in as a user' do
-      visit root_path
-      click_on 'ログイン'
-      expect(page).to have_content('ログイン')
+    fill_in 'メールアドレス', with: 'test@sample.com'
+    fill_in 'パスワード', with: 'password'
+    click_on 'Log in'
 
-      fill_in 'メールアドレス', with: 'test@sample.com'
-      fill_in 'パスワード', with: 'password'
-      click_on 'ログイン'
+    expect(page).to have_content('test@sample.com')
 
-      expect(page).to have_content('test@sample.com')
-    end
+    click_on 'ログアウト'
+
+    expect(page).to have_content('ログイン')
   end
 end
