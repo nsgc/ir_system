@@ -1,0 +1,94 @@
+AllCops:
+  TargetRubyVersion: 2.4
+  DisplayAllCops: true
+
+Rails:
+  Enabled: true
+
+# -----------------TODO-----------------
+
+# Offense count: 1
+# Configuration parameters: AllowSafeAssignment.
+Lint/AssignmentInCondition:
+  Exclude:
+    - 'bin/spring'
+
+# Offense count: 2
+# Configuration parameters: CountComments, ExcludedMethods.
+Metrics/BlockLength:
+  Max: 35
+
+# Offense count: 58
+# Configuration parameters: AllowHeredoc, AllowURI, URISchemes, IgnoreCopDirectives, IgnoredPatterns.
+# URISchemes: http, https
+Metrics/LineLength:
+  Max: 154
+
+# Offense count: 1
+# Configuration parameters: CountComments.
+Metrics/MethodLength:
+  Max: 15
+
+# Offense count: 1
+# Cop supports --auto-correct.
+Style/BlockComments:
+  Exclude:
+    - 'spec/spec_helper.rb'
+
+# Offense count: 17
+Style/Documentation:
+  Enabled: false
+
+# Offense count: 1
+# Cop supports --auto-correct.
+Style/EmptyLines:
+  Exclude:
+    - 'db/migrate/20161105051036_devise_create_users.rb'
+
+# Offense count: 2
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: empty_lines, no_empty_lines
+Style/EmptyLinesAroundBlockBody:
+  Exclude:
+    - 'db/schema.rb'
+
+# Offense count: 2
+# Cop supports --auto-correct.
+# Configuration parameters: AllowForAlignment, ForceEqualSignAlignment.
+Style/ExtraSpacing:
+  Exclude:
+    - 'db/schema.rb'
+
+# Offense count: 70
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles.
+# SupportedStyles: when_needed, always, never
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Offense count: 1
+# Cop supports --auto-correct.
+Style/NumericLiterals:
+  MinDigits: 15
+
+# Offense count: 2
+# Cop supports --auto-correct.
+Style/SpaceInsideBrackets:
+  Exclude:
+    - 'config/environments/production.rb'
+
+# Offense count: 52
+# Cop supports --auto-correct.
+# Configuration parameters: EnforcedStyle, SupportedStyles, ConsistentQuotesInMultiline.
+# SupportedStyles: single_quotes, double_quotes
+Style/StringLiterals:
+  Exclude:
+    - 'Guardfile'
+    - 'bin/spring'
+    - 'config/environments/production.rb'
+    - 'config/puma.rb'
+    - 'db/migrate/20161105051036_devise_create_users.rb'
+    - 'db/schema.rb'
+    - 'spec/factories/scores.rb'
+    - 'spec/rails_helper.rb'
