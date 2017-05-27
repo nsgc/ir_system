@@ -6,6 +6,6 @@ FactoryGirl.define do
     sequence :email do |n|
       "user#{n}@test.com"
     end
-    password "#{SecureRandom.hex(10)}"
+    password SecureRandom.hex(10).to_s
   end
 end
