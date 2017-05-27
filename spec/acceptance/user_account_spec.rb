@@ -1,6 +1,4 @@
 feature 'User Account' do
-  given(:user) { create(:user) }
-
   scenario 'sign up' do
     visit root_path
 
@@ -15,26 +13,30 @@ feature 'User Account' do
     expect(page).to have_content 'Welcome! You have signed up successfully.'
   end
 
-  scenario 'sign in' do
-    visit root_path
+  context 'when there is a created account' do
+    given(:user) { create(:user) }
 
-    click_on 'ログイン'
+    scenario 'sign in' do
+      visit root_path
 
-    fill_in 'メールアドレス', with: user.email
-    fill_in 'パスワード', with: user.password
+      click_on 'ログイン'
 
-    click_on 'Log in'
+      fill_in 'メールアドレス', with: user.email
+      fill_in 'パスワード', with: user.password
 
-    expect(page).to have_content 'Signed in successfully.'
-  end
+      click_on 'Log in'
 
-  scenario 'sign out' do
-    sign_in user
+      expect(page).to have_content 'Signed in successfully.'
+    end
 
-    visit root_path
+    scenario 'sign out' do
+      sign_in user
 
-    click_on 'ログアウト'
+      visit root_path
 
-    expect(page).to have_content 'Signed out successfully.'
+      click_on 'ログアウト'
+
+      expect(page).to have_content 'Signed out successfully.'
+    end
   end
 end
